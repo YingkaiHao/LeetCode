@@ -6,15 +6,9 @@ Given the heads of two singly linked-lists headA and headB, return the node at w
 
 For example, the following two linked lists begin to intersect at node c1:
 
-A:         	 a1 → a2
+A:         	  a1 → a2 → c1 → c2 → c3
 
-​								 ↘
-
-​									 c1 → c2 → c3
-
-​								 ↗
-
-B:    b1 → b2 → b3
+B:    b1 → b2 → b3 → c1 → c2 → c3
 
 It is guaranteed that there are no cycles anywheres in the entire linked structure.
 
