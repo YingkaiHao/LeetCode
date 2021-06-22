@@ -57,7 +57,7 @@ public class Solution{
 
 ## 2. Reverse linked list
 
-Given the head of a singly linked list, reverse the list and return the reversed list.
+Given the head of a singly linked list, reverse the list and return the reversed list. (problem number 206)
 
 Example:
 
