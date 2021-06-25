@@ -108,7 +108,7 @@ class Solution{
 
 ## 3. Merge two sorted lists
 
-Merge two sorted linked and return as a sorted list. The list should be made by splicing together the nodes of the first two lists.
+Merge two sorted linked and return as a sorted list. The list should be made by splicing together the nodes of the first two lists.(problem number 21)
 
 Example:
 
@@ -122,7 +122,7 @@ Constraints:
 2. -100 <= Node.val <= 100
 3. Both l1 and l2 are sorted in non-decreasing order.
 
-**When we doing linked list problems, we can have a <u>temp_node</u> just to hold the heads place. So, as we do all this problems at the very end, we just return <u>temp_node.next</u> to get the actual head we need. **
+**When we doing linked list problems, we can have a temp_node just to hold the heads place. So, as we do all this problems at the very end, we just return temp_node.next to get the actual head we need. **
 
 **In this problem, we first set a list with temp_node. Next, to traverse twe linked lists, we set a pointer current_node to temp_node. Then, traverse twe linked lists using current_node and return as a sorted list.**
 
