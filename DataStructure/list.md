@@ -2,7 +2,7 @@
 
 ## 1. Intersection of two linked lists
 
-Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If two linked lists have no intersection at all, return null. (Problem number 160)
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If two linked lists have no intersection at all, return null. (Problem 160)
 
 For example, the following two linked lists begin to intersect at node c1:
 
@@ -57,7 +57,7 @@ public class Solution{
 
 ## 2. Reverse linked list
 
-Given the head of a singly linked list, reverse the list and return the reversed list. (problem number 206)
+Given the head of a singly linked list, reverse the list and return the reversed list. (problem 206)
 
 Example:
 
@@ -108,7 +108,7 @@ class Solution{
 
 ## 3. Merge two sorted lists
 
-Merge two sorted linked and return as a sorted list. The list should be made by splicing together the nodes of the first two lists.(problem number 21)
+Merge two sorted linked and return as a sorted list. The list should be made by splicing together the nodes of the first two lists.(problem 21)
 
 Example:
 
@@ -154,6 +154,59 @@ class Solution {
         
         return temp_node.next;
     }
+}
+```
+
+## 4. Remove duplicates from sorted list
+
+Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well. (problem 82)
+
+Example:
+
+Input: head = [1, 2, 3, 3, 4, 4, 5]
+
+Output: [1, 2, 5]
+
+Constraints:
+
+1. The number of nodes in the list is in the range[0, 300].
+2. -100 <= Node.val <= 100
+3. The list is guaranteed to be sorted in ascending order.
+
+A method is reference from [leetcode solution](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/solution/).
+
+**I use the approach called "sentinel head + predecessor". Sentinel nodes are widely used for trees and linked lists. They are purely functional and usually don't hold any data. Their primary purpose is to standardize the situation to avoid edge case handling.**
+
+**For example, we could use pseudo-head with zero value to ensure that the situation "delete the list head" could never happen, and all nodes to delete are "inside" the list. (This is a really useful method)**
+
+**In this problem, the input list is sorted, and we can determine if a node is a duplicate by comparing its value to the node afte it in the list. Step by step, we could identify the current sublist of duplicates.**
+
+**Now, since we find the duplicates, it's time to delete it using pointer manipulations. Note that the first node in the duplicates sublist should be removed as well. That means that we have to track the predecessor of duplicates sublist, i,e., the last node before the sublist of duplicates**.
+
+**Then, we use predecessor to skip the entire duplicate sublist and make predecessor to point to the node after the sublist.**
+
+**Finally, I really want to mention that the "while" loop is really useful when we handle data structure problem.**
+
+```java
+class Solution{
+  public ListNode deleteDuplicates(ListNode head){
+    ListNode sentinel = new ListNode(0, head);
+    ListNode pred = sentinel;
+    
+    while(head != null){
+      if(head.next != null && head.val == head.next.val){
+        //This while is use for skip the duplicates that duplicate more than two times.
+        while(head.next != null && head.val == head.next.val){
+          head = head.next;
+        }
+        pred.next = head.next;
+      }else{
+        pred = pred.next;
+      }
+    }
+    
+    return sentinel.next;
+  }
 }
 ```
 
