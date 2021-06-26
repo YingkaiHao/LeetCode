@@ -179,7 +179,7 @@ A method is reference from [leetcode solution](https://leetcode.com/problems/rem
 
 **For example, we could use pseudo-head with zero value to ensure that the situation "delete the list head" could never happen, and all nodes to delete are "inside" the list. (This is a really useful method)**
 
-**In this problem, the input list is sorted, and we can determine if a node is a duplicate by comparing its value to the node afte it in the list. Step by step, we could identify the current sublist of duplicates.**
+**In this problem, the input list is sorted, and we can determine if a node is a duplicate by comparing its value to the node afte it in the list. Step by step, we could identify the current sublist of duplicates.**
 
 **Now, since we find the duplicates, it's time to delete it using pointer manipulations. Note that the first node in the duplicates sublist should be removed as well. That means that we have to track the predecessor of duplicates sublist, i,e., the last node before the sublist of duplicates**.
 
