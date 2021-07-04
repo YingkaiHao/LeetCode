@@ -210,3 +210,77 @@ class Solution{
 }
 ```
 
+## 5. Remove Nth node from end of list
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head. (Problem 19)
+
+Example:
+
+Input: head = [1, 2, 3, 4, 5], n = 2
+
+Output: [1, 2, 3, 5]
+
+Constraints:
+
+1. The number of nodes in the list is sz
+2. 1 <= sz <= 30
+3. 0 <= sz <= 100
+4. 1 <= n <= sz
+
+There are two methods I reference from [leetcode solution](https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/).
+
+### Approach 1: Two pass algorithm
+
+When we first read the problem, it is easy to find out that we are going to remove the node whose length is L-n+1(L is the list length). If we figure out this length, we could relink next pointer of the (L-n)th node to the (L-n+2)th node and the problem solved. So, the only thing we do not know is L which is the list length. We figure out the list length. Then, the problem solved.
+
+Before we start calculating the length, first we will add an auxiliary "dummy" node, which points to the list head. The "dummy" node is used to simlify some corner cases such as list with only one node, or removing the head of the list.
+
+```java
+class Solution{
+  public ListNode removeNthFromEnd(ListNode head, int n){
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+    ListNode first = head;
+    while(first != null){
+      length++;
+      first = first.next;
+    }
+    length -= n;
+    first = dummy;
+    while(length > 0){
+      length--;
+      first = first.next;
+    }
+    first.next = first.next.next;
+    return dummy.next;
+  }
+}
+```
+
+### Approach 2: One pass algorithm
+
+I didn't figure out this method until I see it. Instead of using one pointer, we could use two pointers. The first pointer advances the list by n+1 steps from teh beginning, while the second pointers starts from the beginning of the list. Now, both pointers are exactly separated by n nodes apart. We maintain this constant gap by advancing both pointers together until the first pointer arrives past the last node. And second pointer will be pointing at the nth node counting from the last. We relink the next pointer of the node referenced by the second pointer to point to the node's next next node.
+
+```java
+class Solution{
+  public ListNode removeNthFromEnd(ListNode head, int n){
+    ListNode dummy = new listNode(0);
+    dummy.next = head;
+    ListNode first = dummy;
+    LisrNode second = dummy;
+    
+    for(int i = 1; i <= n+1, i++){
+      first = first.next;
+    }
+    
+    while(first != null){
+      first = first.next;
+      second = second.next;
+    }
+    
+    second.next = second.next.next;
+    return dummy.next;
+  }
+}
+```
+
