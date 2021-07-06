@@ -1,6 +1,12 @@
 # Lists
 
-[	1. Intersection of two linked lists](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#1-intersection-of-two-linked-lists)
+1. [ Intersection of two linked lists](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#1-intersection-of-two-linked-lists)
+2. [Reverse linked list](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#2-reverse-linked-list)
+3. [Merge two sorted lists](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#3-merge-two-sorted-lists)
+4. [Remove duplicates from sorted lists](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#4-remove-duplicates-from-sorted-list)
+5. [Remove Nth node from end of list](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#5-remove-nth-node-from-end-of-list)
+6. [Swap nopes in pairs](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#6-swap-nodes-in-pairs)
+7. [Add two numbers II](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#7-add-two-numbers-ii)
 
 ## 1. Intersection of two linked lists
 
