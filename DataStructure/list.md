@@ -240,6 +240,7 @@ class Solution{
   public ListNode removeNthFromEnd(ListNode head, int n){
     ListNode dummy = new ListNode(0);
     dummy.next = head;
+    int length = 0;
     ListNode first = head;
     while(first != null){
       length++;
@@ -318,6 +319,59 @@ class Solution{
       pre = l1;
     }
     return dummy.next;
+  }
+}
+```
+
+## 7. Add two Numbers II
+
+You are given two non_empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number itself.
+
+Example:
+
+Input: l1 = [7, 2, 4, 3], l2 = [5, 6, 4]
+
+Output: [7, 8, 0, 7]
+
+Constrains: 
+
+1. The number of nodes in each linked list is in range[0, 100].
+2. 0 <= node.val <= 9
+3. It is guaranteed that the list represents a number that does not have leading zeros.
+
+**The main difficulty in this problem is that the order of the digits in the list is the opposite of the order in which we do addition. To deal with all digits reversely, we could use stack. First, we push all numbers into stacks. Then, we get them out and do addition. Here, we use a specialty of stack, which is the orders we push numbers in and out are opposite. In this case, we could reverse lists and do addition.**
+
+```java
+class Solution{
+  public ListNode addTwoNumebers(ListNode l1, ListNode l2){
+    Stack<Integer> stack1 = new Stack<>();
+    Stack<Integer> stack1 = new Stack<>();
+    while(l1 != null){
+      stack1.push(l1.val);
+      l1 = l1.next;
+    }
+    while(l2 != null){
+      stack2.push(l2.val);
+      l2 = l2.next;
+    }
+    
+    ListNode head = new ListNode(0);
+    int carry = 0;
+    while(!stack1.isEmpty() || !stack2.isEmpty() || carry != 0){
+      int a = stack1.isEmpty() ? 0 : stack1.pop();
+      int b = stack2.isEmpty() ? 0 : stack2.pop();
+      
+      int sum = a + b + carry;
+      carry = sum/10;
+      ListNode new_node = new ListNode(sum%10);
+      
+      new_node.next = head.next;
+      head.next = new_node;
+    }
+    
+    return head.next;
   }
 }
 ```
