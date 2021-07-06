@@ -1,5 +1,7 @@
 # Lists
 
+[	1. Intersection of two linked lists](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#1-intersection-of-two-linked-lists)
+
 ## 1. Intersection of two linked lists
 
 Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If two linked lists have no intersection at all, return null. (Problem 160)
