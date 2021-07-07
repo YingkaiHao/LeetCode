@@ -384,3 +384,86 @@ class Solution{
 }
 ```
 
+## 8. Palindrome linked list
+
+Given the head of a singly linked list, return true if it is a palindrome. (Problem 234)
+
+Example:
+
+Input: head = [1, 2, 2, 1]
+
+Output: true
+
+Constraints:
+
+1. The number fo nodes in the list is in the range[1, 100000]
+2. 0 <= node.val <= 9
+
+Follow up: O(n) time and O(1) space.
+
+**The method of this problem is quite easy. We could combine some of the methods above to solve this problem. Firstly, we have to cut the linked list from middle to two separate listsm, like l1 list and l2 list.  Then, we reverse l2 list and compare each node from the newly l2 list and each node from l1 list. If all nodes are same, the linked list is a palindrome.**
+
+```java
+class Solution{
+  public boolean isPalindrome(ListNode head){
+    if(head == null || head.next = null) return true;
+    //mark a pointer before head
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+    //calculate the length of the linked list
+    ListNode node = head;
+    int length = 0;
+    while(node != null){
+      length++;
+      node = node.next;
+    }
+    //Using "length" to cut the linked list from middle into two separate lists
+    ListNode new_node = dummy;
+    if(length % 2 == 0){
+      int new_length = length/2;
+      while(new_length > 0){
+        new_length--;
+        new_node = new_node.next;
+        head = head.next;
+      }
+      new_node = new_node.next;
+    }else{
+      int new_length = length/2;
+      while(new_length > 0){
+         new_length--;
+         new_node = new_node.next;
+         head = head.next;
+       }
+      new_node = new_node.next.next;
+    }
+    
+    //reverse the list from behind and compare each node.val
+    ListNode newHead = reverseList(new_node);
+    //use dummy
+    head = dummy.next;
+    return isEqual(newHead, head);
+  }
+  
+  //The method which used to reverse list
+  private ListNode reverseList(ListNode l){
+    ListNode newHead = new ListNode(0);
+    while(l != null){
+      ListNode next = l.next;
+      l.next = newHead.next;
+      newHead.next = l;
+      l = next;
+    }
+    return newHead.next;
+  }
+  //The method which used to compare l1 and l2 lists
+  private boolean isEqual(ListNode l1, ListNode l2){
+    while(l1 != null && l2 != null){
+      if(l1.val != l2.val) return false;
+      l1 = l1.next;
+      l2 = l2.next;
+    }
+    return true;
+  }
+}
+```
+
