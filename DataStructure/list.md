@@ -204,7 +204,7 @@ class Solution{
     
     while(head != null){
       if(head.next != null && head.val == head.next.val){
-        //This while is use for skip the duplicates that duplicate more than two times.
+        //This while is used for skipping the duplicates that duplicate more than two times.
         while(head.next != null && head.val == head.next.val){
           head = head.next;
         }
@@ -467,4 +467,69 @@ class Solution{
   }
 }
 ```
+
+## 9. Split linked list in parts
+
+Given the head of a singly linked list and an integer k, split the linked list into k consecutive linked list parts. The length of each part should be as equal as possible: no two parts should have a size differing by more than one. This may lead to some parts being null. The parts should be in the order of occurrence in the input list, and parts occurring earlier should always have a size greater than or equal to parts occurring later. (Problem 725)
+
+Example 1:
+
+Input: head = [1, 2, 3], k = 5
+
+Output: [[1], [2], [3], [ ], [ ]]
+
+Explanation: The first element output[0] has output[0].val = 1, output[0].next = null. The last element output[4] is null, but its string representation as a ListNode is [ ].
+
+Example 2:
+
+Input: head = [1, 2, 3, 4, 5, 6, 7, 8, 9,10], k = 3
+
+Output: [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]]
+
+Explanation: The input has been split into consecutive parts with size difference at most 1, and earlier parts are a longer size than the later parts.
+
+Constraints:
+
+1. The number of nodes in the list is int he range [0, 1000].
+2. 0 <= Node.val <= 1000
+3. 1 <= k <= 50
+
+```java
+class Solution{
+  public ListNode[] splitListToParts(ListNode head, int k){
+    ListNode current = head;
+    int length = 0;
+    while(current != null){
+      length++;
+      current = current.next;
+    }
+    int remainder = length % k;
+    int size = length / k;
+    ListNode[] newList = new ListNode[k];
+    current = head;
+    for(int i = 0; current != null && i < k, i++){
+      newList[i] = current;
+      int newLength = size;
+    /**
+     * This is the key to this problem.
+     * We use this method to achieve that all parts should be in the order of occurrence in the input list,
+     * and parts occurring earlier should always have a size greater than or equal to parts occurring later.
+     * Also, noting that "--remainder" means we do minus first. Don't use "remainder--"
+     */
+      if(--remainder >= 0){
+        newLength++;
+      }
+      for(int j = 0; j < newLength - 1; j++){
+        current = current.next;
+      }
+      ListNode next = current,next;
+      current.next = null;
+      current = next;
+    }
+    return newList;
+  }
+}
+```
+
+
 
