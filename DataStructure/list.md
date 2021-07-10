@@ -8,6 +8,7 @@
 6. [Swap nopes in pairs](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#6-swap-nodes-in-pairs)
 7. [Add two numbers II](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#7-add-two-numbers-ii)
 8. [Palindrome linked list](https://github.com/YinghaiHao/LeetCode/blob/main/DataStructure/list.md#8-palindrome-linked-list)
+9. [Split linked list in parts](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/list.md#9-split-linked-list-in-parts)
 
 ## 1. Intersection of two linked lists
 
