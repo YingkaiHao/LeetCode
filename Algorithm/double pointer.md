@@ -1,6 +1,7 @@
 # Double Pointer
 
 1. [Two sum II-Input array is sorted](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#1-two-sum-ii-input-array-is-sorted)
+2. [Sum of square numbers](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#2-sum-of-square-numbers)
 
 ## 1. Two sum II-Input array is sorted
 
@@ -54,7 +55,7 @@ class Solution{
 }
 ```
 
-## 2. Sum of Square Numbers
+## 2. Sum of square numbers
 
 Given a non-negative integer c, decide whether there're two integers a and b such that a^2+b^2 = c.
 
