@@ -54,3 +54,44 @@ class Solution{
 }
 ```
 
+## 2. Sum of Square Numbers
+
+Given a non-negative integer c, decide whether there're two integers a and b such that a^2+b^2 = c.
+
+Example 1:
+
+Input: c = 5;
+
+Output: true;
+
+Explanation: 1 * 1 + 2 * 2 = 5
+
+Example 2:
+
+Input: c = 3;
+
+Output: false
+
+**This problem is changed a little from prolem 167. We also use double pointter to solve this problem. The left pointer point to 0 and the right pointer point to sqrt(c).**
+
+```java
+class Solution{
+  public boolean judgeSquareSum(int c){
+    if(c < 0) return null;
+    int i = 0;
+    int j = (int)Math.sqrt(c);
+    while(i < j){
+      int sum = i * i + j * j;
+      if(sum == c){
+        return true;
+      }else if(sum < c){
+        i++;
+      }else{
+        j--
+      }
+    }
+    return false;
+  }
+}
+```
+
