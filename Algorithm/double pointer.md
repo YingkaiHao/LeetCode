@@ -96,3 +96,4 @@ class Solution{
 }
 ```
 
+## 3. Reverse vowels of a string
