@@ -57,7 +57,7 @@ class Solution{
 
 ## 2. Sum of square numbers
 
-Given a non-negative integer c, decide whether there're two integers a and b such that a^2+b^2 = c.
+Given a non-negative integer c, decide whether there're two integers a and b such that a^2+b^2 = c.(problem 633)
 
 Example 1:
 
@@ -97,3 +97,41 @@ class Solution{
 ```
 
 ## 3. Reverse vowels of a string
+
+Given a string s, reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', 'u', and they can appear in both cases.
+
+Example 1:
+
+Input: s = "hello"
+
+Output: "holle"
+
+**We still use double pointer to solve this problem. One pointer points to the head of s and remove from head to tail. Another pointer points to the tail of s and remove from tail to head. During this process, if both head pointer and tail pointer contains vowels, we exchange two vowels.**
+
+```java
+class solution{
+  public String reverseVowels(String s){
+    if(s == null) return null;
+    int i = 0;
+    int j = s.length()-1;
+    char[] output = new char[s.length()];
+    while(i <= j){
+      char si = s.charAt[i];
+      char sj = s.charAt[j];
+      if(!vowels.contains(si)){
+        output[i++] = si;
+      }else if(!vowels.contains(sj)){
+        output[j--] = sj;
+      }else{
+        output[i++] = sj;
+        output[j--] = si;
+      }
+    }
+    return new String(output);
+  }
+  private final static HashSet<Character> vowels = new HashSet<>(
+    Array. asList('u', 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o')
+  );
+}
+```
+
