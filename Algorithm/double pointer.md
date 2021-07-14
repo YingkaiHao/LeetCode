@@ -99,7 +99,7 @@ class Solution{
 
 ## 3. Reverse vowels of a string
 
-Given a string s, reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', 'u', and they can appear in both cases.
+Given a string s, reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', 'u', and they can appear in both cases.(problem 345)
 
 Example 1:
 
@@ -135,4 +135,48 @@ class solution{
   );
 }
 ```
+
+## 4. Valid palindrome II
+
+Given a string s, return true if the s can be palindrome after deleting at most one character from it.(problem 680)
+
+Example 1:
+
+Input: s = "aba"
+
+Output: true
+
+Example 2:
+
+Input: s = "abca"
+
+Output: true
+
+Explanation: You could delete the character 'c'
+
+**Actually, this problem can be divide into two conditions. If the 's' is already a palindrome, the 's' must be palindrome after deleting at most one character from it. However, if the 's' is not a palindrome, we have to judge whether the 's' is apalindrome after deleting at most one character from it.** 
+
+```java
+class Solution{
+  private boolean isPalindrome(String s, int i, int j){
+    while(i < j){
+      if(s.charAt(i++) != s.charAt(j--)){
+        return false;
+      }
+    }
+    return true;
+  }
+  public boolead validPalindrome(String s){
+    for (int i = 0, j = s.length()-1; i < j; i++, j--){
+      if(s.charAt(i) != s.charAt(j)){
+        boolean result = isPalindrome(s, i + 1, j) || isPalindrome(s, i, j - 1);
+        return result;
+      }
+    }
+    return true;
+  }
+}
+```
+
+
 
