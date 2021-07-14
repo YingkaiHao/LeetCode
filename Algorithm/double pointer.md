@@ -2,6 +2,7 @@
 
 1. [Two sum II-Input array is sorted](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#1-two-sum-ii-input-array-is-sorted)
 2. [Sum of square numbers](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#2-sum-of-square-numbers)
+3. [Reverse vowels of a string](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#3-reverse-vowels-of-a-string)
 
 ## 1. Two sum II-Input array is sorted
 
