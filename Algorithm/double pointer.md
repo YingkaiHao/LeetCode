@@ -224,3 +224,34 @@ class Solution {
 ```
 
 ## 6. Linked List Cycle
+
+Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter. Return true if there is a cycle int ehlinked list. Otherwise, return false.
+
+Example 1:
+
+Input: head = [3, 2, 0, -4], pos = 1
+
+Output: true
+
+Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
+**Use two pointers to solve this problem. The first pointer points to head and second pointer points to head.next. The first pointer moves one node each time and the second pointer moves two nodes each time. If two pointers encounter, that means there is a cycle in the given linked list.**
+
+```java
+class Solution {
+  public boolean hasCycle(ListNode head) {
+    if (head == null) return false;
+    ListNode l1 = head, l2 = head.next;
+    while (l1 != null && l2 != null && l2.next != null) {
+      if (l1 == l2) {
+        return true;
+      } else {
+        l1 = l1.next;
+        l2 = l2.next.next;
+      }
+    }
+    return false;
+  }
+}
+```
+
