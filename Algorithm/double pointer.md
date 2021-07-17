@@ -5,6 +5,7 @@
 3. [Reverse vowels of a string](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#3-reverse-vowels-of-a-string)
 4. [Valid palindrome II](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#4-valid-palindrome-ii)
 5. [Merge sorted list](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#5-merge-sorted-list)
+6. [Linked list cycle](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#6-linked-list-cycle)
 
 ## 1. Two sum II-Input array is sorted
 
@@ -223,7 +224,7 @@ class Solution {
 }
 ```
 
-## 6. Linked List Cycle
+## 6. Linked list cycle
 
 Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter. Return true if there is a cycle int ehlinked list. Otherwise, return false.
 
