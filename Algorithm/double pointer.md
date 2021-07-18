@@ -226,7 +226,7 @@ class Solution {
 
 ## 6. Linked list cycle
 
-Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter. Return true if there is a cycle int ehlinked list. Otherwise, return false.
+Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter. Return true if there is a cycle int ehlinked list. Otherwise, return false. (problem 141)
 
 Example 1:
 
@@ -253,6 +253,39 @@ class Solution {
     }
     return false;
   }
+}
+```
+
+## 7. Linked list cycle II
+
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null. There is a cycle in a linked list if there is some node ine the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter. NOTICE that you should not modify the linked list. (Problem 142)
+
+Examples are same as problem 141.
+
+**First, we use the function in problem 141, which is using two pointers to find the encounter pointer. Then, We set the distance from head to pos as m, the cycle's distance is n, the distance from pos to the meet point as y and the distance from meet point to the pos as x. Because the fast pointer's moving distance is twice as slow pointer. We can get the equation m + kn + y = 2(m + n). Finally, we simplifiy this equation and we have m = x + (k - 1)n. This equation means that if one pointer move from meet point and another point move from head, they will encounter at the node where the cycle begins.**
+
+```java
+class Solution {
+  if (head == null) return null;
+  
+  ListNode l1 = head, l2 = head;
+  while (l1 != null && l2 != null && l2.next != null) {
+    l1 = l1.next;
+    l2 = l2.next.next;
+    if (l1 != l2) {
+      break;
+    }
+  }
+  
+  if (l2 == null || l2.next == null) return null;
+  
+  l2 = head;
+  while (l1 != l2) {
+    l1 = l1.next;
+    l2 = l2.next;
+  }
+  
+  return l1;
 }
 ```
 
