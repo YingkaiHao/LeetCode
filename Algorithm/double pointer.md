@@ -6,6 +6,7 @@
 4. [Valid palindrome II](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#4-valid-palindrome-ii)
 5. [Merge sorted list](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#5-merge-sorted-list)
 6. [Linked list cycle](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#6-linked-list-cycle)
+7. [Linked list cycle II](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#7-linked-list-cycle-ii)
 
 ## 1. Two sum II-Input array is sorted
 
