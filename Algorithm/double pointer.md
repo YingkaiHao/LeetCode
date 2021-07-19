@@ -7,6 +7,7 @@
 5. [Merge sorted list](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#5-merge-sorted-list)
 6. [Linked list cycle](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#6-linked-list-cycle)
 7. [Linked list cycle II](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#7-linked-list-cycle-ii)
+8. [Longest word in dictionary through deleting](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/double%20pointer.md#8-longest-word-in-dictionary-through-deleting)
 
 ## 1. Two sum II-Input array is sorted
 
