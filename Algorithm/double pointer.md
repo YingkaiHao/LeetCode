@@ -187,7 +187,7 @@ class Solution{
 
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
-The final sorted array should not be returned by the function, but instead be store dinside the array nums1. To accommodate this, nums1 has a length of m+n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+The final sorted array should not be returned by the function, but instead be store dinside the array nums1. To accommodate this, nums1 has a length of m+n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n. (Problem 88)
 
 Example 1:
 
@@ -293,7 +293,7 @@ class Solution {
 
 ## 8. Longest word in dictionary through deleting
 
-Given a string s and a string array dictionary, return the longest string in the dictionary that can be formed by deleting some of the given string characters. If there is more than one possible result, return the longest word with the smallest lexicographical order. If there is no possible result, return the empty string.
+Given a string s and a string array dictionary, return the longest string in the dictionary that can be formed by deleting some of the given string characters. If there is more than one possible result, return the longest word with the smallest lexicographical order. If there is no possible result, return the empty string. (Problem 524)
 
 Example 1:
 
