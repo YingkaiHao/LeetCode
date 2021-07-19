@@ -290,3 +290,50 @@ class Solution {
 }
 ```
 
+## 8. Longest word in dictionary through deleting
+
+Given a string s and a string array dictionary, return the longest string in the dictionary that can be formed by deleting some of the given string characters. If there is more than one possible result, return the longest word with the smallest lexicographical order. If there is no possible result, return the empty string.
+
+Example 1:
+
+Input: s = "abpcplea", dictionary = ["ale", "apple", "monkey", "plea"]
+
+Output: "apple"
+
+**The method comparedTo() is used for comparing two strings ASCII number. It is very useful solving this problem.**
+
+```java
+class Solution {
+  public String fingLongestWord(String s, List<String> dictionary) {
+    String longestWord = "";
+    for (String target: dictionary) {
+      int l1 = longestWord.length(), l2 = target.length();
+      if (l1 > l2 || l1 == l2 && longestWord.comparedTo(target) < 0) {
+        continue;
+      }
+      if (isSub(s, target) == true) {
+        longestWord = target;
+      }
+    }
+    return longestWord;
+  }
+  
+  private boolean isSub(String s, String target) {
+    int i = 0, j = 0;
+    boolean result;
+    while (i < s.length() && j < target.length()) {
+      if (s.charAt(i) == target.charAt(j)) {
+        j++;
+      }
+      i++;
+    }
+    if (target.length() == j) {
+      result = true;
+    } else {
+      result = false;
+    }
+    return result;
+  }
+}
+```
+
