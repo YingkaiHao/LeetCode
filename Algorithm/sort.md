@@ -1,8 +1,10 @@
 # Sort
 
+1. [Kth largest element in an array](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/sort.md#1-kth-largest-element-in-an-array)
+
 ## 1. Kth largest element in an array
 
-Given a integer array nums and an integer k, return the nth largest element in the array. Note that it is the largest element in the sorted order, not the nth distinct element.
+Given a integer array nums and an integer k, return the nth largest element in the array. Note that it is the largest element in the sorted order, not the nth distinct element.(problem 215)
 
 Example:
 
