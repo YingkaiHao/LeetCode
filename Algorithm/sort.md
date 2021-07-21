@@ -68,3 +68,49 @@ class Solution {
 }
 ```
 
+## 2. Top k frequent element
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order. (Problem 347)
+
+Example:
+
+Input: nums = [1, 1, 1, 2, 2, 3]
+
+Output: [1, 2]
+
+**In this problem, we normally use a method called bucket sort. For example, we set up a number of buckets, each of which stores the numbers with same frequency. That means the nth buckets stores the numbers which appear n times. When we put all the numbers in the bucket, we go through the bucket from the back to the front, the first k numbers we get are the k numbers that occur the most frequently.**
+
+```java
+class Solution {
+  public int[] topKFrequent(int[] nums, int k) {
+    Map<Integer, Integer> numsFrequency = new HashMap<>();
+    for (int num : nums) {
+      numsFrequency.put(num, numsFrequency.getOrDefault(num, 0) + 1);
+    }
+    List<Integer> buckets = new ArrayList[nums.length + 1];
+    for (int key : numsFrequency.keySet()) {
+      int frequency = numsFrequency.get[key];
+      if (buckets[frequency] == null) {
+        buckets[frequency] = new ArrayList<>();
+      }
+      buckets[frequency].add(key);
+    }
+    List<Integer> topK = new ArrayList();
+    for (int i = buckets.length - 1; i >= 0 && topk.size() < k; i--) {
+      if (buckets[i] == null) {
+        continue;
+      } else if (buckets[i] <= k - topK.size()) {
+        topK.addAll(buckets[i]);
+      } else {
+        topK.addAll(buckets[i].subList(0, k - topK.size()))
+      }
+    }
+    int[] result = new int[k];
+    for (int j = 0; j < k, j++) {
+      result[j] = topK.get(j);
+    }
+    return result;
+  }
+}
+```
+
