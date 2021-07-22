@@ -2,6 +2,7 @@
 
 1. [Kth largest element in an array](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/sort.md#1-kth-largest-element-in-an-array)
 2. [Top k freuqent element](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/sort.md#2-top-k-frequent-element)
+3. [Sort character by frequency](https://github.com/YingkaiHao/LeetCode/blob/main/Algorithm/sort.md#3-sort-character-by-frequency)
 
 ## 1. Kth largest element in an array
 
