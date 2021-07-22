@@ -115,3 +115,56 @@ class Solution {
 }
 ```
 
+## 3. Sort character by frequency
+
+Given a string, sort it in decreasing order based on the frequency of characters, and return the sorted string.(problem 451)
+
+Example 1:
+
+Input: s = "tree"
+
+Output: "eert"
+
+Explanation: 'e' appears twice while 'r' and 't' both appear once. So 'e' must appear before both 'r' and 't'. Therefore, "eetr" is also a valid answer.
+
+Example 2:
+
+Input: s = "cccaaa"
+
+Output: "aaaccc"
+
+Explanation: Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer. Note that "cacaca" is incorrect, as the same characters must be together.
+
+**This problem is just the same as problem 347. We also use buckets sort to solve this problem.**
+
+```java
+class Solution {
+  public String frequencySort(String s) {
+    Map<Character, Integer> frequencyForLetter = new HashMap<>();
+    for (char c : s.toCharArray()) {
+      frequencyForLetter.put(c, frequencyForLetter(c, 0) + 1);
+    }
+    List<Character> buckets= new ArrayList[s.length() + 1];
+    for (char key : frequencyForLetter.keySet()) {
+      int frequency = frequencyForLetter.get(key);
+      if (buckets[frequency] == null) {
+        buckets[frequency] = new ArrayList<>();
+      }
+      buckets[freuqency].add(key);
+    }
+    StringBuilder result = new StringBuilder();
+    for (int i = buckets.length - 1; i >= 0; i--) {
+      if (buckets[i] == null) {
+        continue;
+      }
+      for (char letter : buckets[i]) {
+        for (int j = 0; j < i; j++) {
+          result.append(letter);
+        }
+      }
+    }
+    return result.toString();
+  }
+}
+```
+
