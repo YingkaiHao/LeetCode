@@ -6,6 +6,8 @@
 
 (2).[Balanced binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-balanced-binary-tree)
 
+(3).[Diameter of binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#3-diameter-of-binary-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -61,7 +63,7 @@ class Solution {
 
 ### (3). Diameter of binary tree
 
-Given the root of a binary tree, return the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root. the length of a path between two nodes is represented by the number of edges between them.
+Given the root of a binary tree, return the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root. the length of a path between two nodes is represented by the number of edges between them.(problem 543)
 
 Example:
 
