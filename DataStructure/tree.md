@@ -92,7 +92,7 @@ class Solution {
 }
 ```
 
-### (4). Invert Binary Tree
+### (4). Invert binary tree
 
 Given the root of a binary tree, invert the tree, and return its root.(problem 226)
 
@@ -109,6 +109,29 @@ class Solution {
     TreeNode right = root.right;
     root.right = invertTree(root.left);
     root.left = invertTree(right);
+    return root;
+  }
+}
+```
+
+### (5). Merge two binary trees
+
+You are given two binary trees root1 and root2. Imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the other are not. You need to merge the two trees into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of the new tree.
+
+Example: 
+
+Input: root1 = [1, 3, 2, 5] 	root2 = [2, 1, 4, null, 4, null, 7]
+
+Output: [3, 4, 5, 5, 4, null, 7]
+
+```java
+class Solution {
+  public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+    if (root1 == null && root2 == null) return null;
+    if (root1 == null) return root2;
+    if (root2 == null) return root1;
+    root.left = mergeTrees(root1.left, root2.left);
+    root.right = mergeTrees(root2.left, root2.right);
     return root;
   }
 }
