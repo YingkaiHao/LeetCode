@@ -92,3 +92,25 @@ class Solution {
 }
 ```
 
+### (4). Invert Binary Tree
+
+Given the root of a binary tree, invert the tree, and return its root.(problem 226)
+
+Example:
+
+Input: root = [4, 2, 7, 1, 3, 6, 9]
+
+Output: [4, 7, 2, 9, 6, 3, 1]
+
+```java
+class Solution {
+  public TreeNode invertTree(TreeNode root) {
+    if (root == null) return null;
+    TreeNode right = root.right;
+    root.right = invertTree(root.left);
+    root.left = invertTree(right);
+    return root;
+  }
+}
+```
+
