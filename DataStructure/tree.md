@@ -8,6 +8,10 @@
 
 (3).[Diameter of binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#3-diameter-of-binary-tree)
 
+(4).[Invert binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#4-invert-binary-tree)
+
+(5).[Merge two binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#5-merge-two-binary-trees)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
