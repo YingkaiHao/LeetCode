@@ -12,6 +12,8 @@
 
 (5).[Merge two binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#5-merge-two-binary-trees)
 
+(6).[Path sum](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#6-path-sum)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
