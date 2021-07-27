@@ -141,3 +141,25 @@ class Solution {
 }
 ```
 
+### (6). Path sum
+
+Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targerSum. A leaf is a node with no children. (Problem 112)
+
+Example:
+
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1]	targerSum = 22
+
+Output: true
+
+```java
+class Solution {
+  public boolean hasPathSum(TreeNode root, int targetSum) {
+    if (root == null) return false;
+    if (root.left == null && root.right == null && root.val == targetSum) return true;
+    boolean leftResult = hasPathSum(root.left, targetSum - root.val);
+    boolean rightResult = hasPathSum(root.right, targetSum = root.val);
+    return leftResult || rightResult;
+  }
+}
+```
+
