@@ -14,7 +14,7 @@
 
 (6).[Path sum](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#6-path-sum)
 
-(7).
+(7).[Path sum III](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#7-path-sum-iii)
 
 ## 1. Recursion
 
