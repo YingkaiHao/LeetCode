@@ -16,6 +16,8 @@
 
 (7).[Path sum III](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#7-path-sum-iii)
 
+(8).[Subtree of another tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#8-subtree-of-another-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -198,7 +200,7 @@ class Solution {
 
 ### (8). Subtree of another tree
 
-Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise. A subtree of a binary tree is a tree that consists of a node in tree and all of this node's descendents. The tree could also be considered as a subtree of itself.
+Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise. A subtree of a binary tree is a tree that consists of a node in tree and all of this node's descendents. The tree could also be considered as a subtree of itself. (Problem 572)
 
 Example1:
 
