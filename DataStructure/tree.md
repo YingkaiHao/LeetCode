@@ -18,6 +18,8 @@
 
 (8).[Subtree of another tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#8-subtree-of-another-tree)
 
+(9).[Symmetric tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#9-symmetric-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
