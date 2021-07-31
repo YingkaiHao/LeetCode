@@ -233,3 +233,32 @@ class Solution {
 }
 ```
 
+### (9). Symmetric tree
+
+Given the root of a binary tree, check whether it is a mirror of itself(i.e., symmetric around its center) (problem 101)
+
+Example:
+
+```
+Input: root = [1,2,2,3,4,4,3]
+Output: true
+```
+
+```java
+class Solution {
+  public boolean isSymmetric(TreeNode root) {
+    if (root == null) return false;
+    boolean result = isLeafSymmetric(root.left, root.right);
+    return result;
+  }
+  
+  private boolean isLeafSymmetric(TreeNode l1, TreeNode l2) {
+    if (l1 == null && l2 == null) return true;
+    if (l1 == null || l2 == null) return false;
+    if (l1.val != l2.val) return false;
+    boolean result = isLeafSymmetric(l1.left, l2.right) && idLeafSymmetric(l1.right, l2.left);
+    return result;
+  }
+}
+```
+
