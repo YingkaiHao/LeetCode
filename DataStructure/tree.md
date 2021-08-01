@@ -20,6 +20,8 @@
 
 (9).[Symmetric tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#9-symmetric-tree)
 
+(10).[Minimum depth of binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-minimum-depth-of-binary-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
