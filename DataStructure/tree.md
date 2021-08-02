@@ -291,3 +291,33 @@ class Solution {
 }
 ```
 
+### (11). Sum of left leaves
+
+Given the root of a binary tree, return the sum of all left leaves. (Problem 404)
+
+Example:
+
+```
+Input: root = [3,9,20,null,null,15,7]
+Output: 24
+Explanation: There are two left leaves in the binary tree, with values 9 and 15 respectively.
+```
+
+```java
+class Solution {
+  public int sumOfLeftLeaves(TreeNode root) {
+    if (root == null) return 0;
+    if (leftOrNot(root.left)) {
+      return root.left.val + sumOfLeftLeaves(root.right);
+    }
+    return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+  }
+  
+  private boolean leftOrNot(TreeNode root) {
+    if (root == null) return false;
+    boolean result = root.left == null && root.right == null;
+    return result;
+  }
+}
+```
+
