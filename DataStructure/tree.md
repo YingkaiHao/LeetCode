@@ -22,6 +22,8 @@
 
 (10).[Minimum depth of binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-minimum-depth-of-binary-tree)
 
+(11).[Sum of left leaves](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#11-sum-of-left-leaves)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
