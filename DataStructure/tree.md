@@ -24,6 +24,8 @@
 
 (11).[Sum of left leaves](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#11-sum-of-left-leaves)
 
+(12).[Longest univalue path](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#12-longest-univalue-path)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
