@@ -26,6 +26,8 @@
 
 (12).[Longest univalue path](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#12-longest-univalue-path)
 
+(13).[House robber III](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#13-house-robber-iii)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
