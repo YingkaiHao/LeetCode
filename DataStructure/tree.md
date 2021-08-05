@@ -429,10 +429,40 @@ Given such a binary tree, you need to output the second minimum value in the set
 
 Example 1:
 
-![img](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/Image/Smbt1.jpg)
-
 ```
 Input: root = [2,2,5,null,null,5,7]
 Output: 5
 Explanation: The smallest value is 2, the second smallest value is 5.
 ```
+
+Example 2:
+
+```
+Input: root = [2,2,2]
+Output: -1
+Explanation: The smallest value is 2, but there isn't any second smallest value.
+```
+
+```java
+class Solution {
+  public int findSedondMinimumValue(TreeNode root) {
+    if (root == null) return -1;
+    if (root.left == null && root.right == null) return -1;
+    int leftValue = root.left.val;
+    int rightValue = root.right.val;
+    
+    if (leftValue == root.val) {
+      leftValue = findSecondMinimumValue(root.left);
+    }
+    
+    if (rightValue == root.val) {
+      rightValue = findSecondMinimumValue(root.right);
+    }
+    
+    if (leftValue != -1 && rightValue != -1) return Math.min(leftValue, rightValue);
+    if (leftValue != -1) return leftValue;
+    return rightValue;
+  }
+}
+```
+
