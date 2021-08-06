@@ -30,6 +30,10 @@
 
 (14).[Second minimum node in a binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#14-second-minimum-node-in-a-binary-tree)
 
+2.[Traverse](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-traverse)
+
+(1).[Average of levels in binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-average-of-levels-in-binary-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
