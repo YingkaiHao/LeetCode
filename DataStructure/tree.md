@@ -34,6 +34,8 @@
 
 (1).[Average of levels in binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-average-of-levels-in-binary-tree)
 
+(2).[Find bottom left tree value](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-find-bottom-left-tree-value)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -513,6 +515,39 @@ class Solution {
       result.add(sum/size);
     }
     return result;
+  }
+}
+```
+
+### (2). Find bottom left tree value
+
+Given the root lf a binary tree, return the leftmost value in the last row of the tree. (Problem 513)
+
+Example 1:
+
+```
+Input: root = [2,1,3]
+Output: 1
+```
+
+Example 2:
+
+```
+Input: root = [1,2,3,4,null,5,6,null,null,7]
+Output: 7
+```
+
+```java
+class Solution {
+  public int findBottomLeftValue(TreeNode root) {
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      root = queue.poll();
+      if (root.right != null) root.add(root.right);
+      if (root.left != null) root.add(root.left);
+    }
+    return root.val;
   }
 }
 ```
