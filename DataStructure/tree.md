@@ -36,7 +36,9 @@
 
 (2).[Find bottom left tree value](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-find-bottom-left-tree-value)
 
-3.Preorder/Postorder/Inorder traversal
+3.[Preorder/Postorder/Inorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#3-preorderpostorderinorder-traversal)
+
+(1).[Preorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-preorder-traversal)
 
 ## 1. Recursion
 
