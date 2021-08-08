@@ -36,6 +36,8 @@
 
 (2).[Find bottom left tree value](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-find-bottom-left-tree-value)
 
+3.Preorder/Postorder/Inorder traversal
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -474,7 +476,7 @@ class Solution {
 }
 ```
 
-## 2. Traverse
+## 2. Level traversal
 
 ### (1). Average of levels in binary tree
 
@@ -549,6 +551,31 @@ class Solution {
     }
     return root.val;
   }
+}
+```
+
+## 3. Preorder/Postorder/Inorder traversal
+
+### (1). Preorder traversal
+
+Problem 144. Binary tree preorder traversal
+
+```java
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            if (node == null) continue;
+            result.add(node.val);
+            stack.push(node.right);
+            stack.push(node.left);
+        }
+        return result;
+    }
 }
 ```
 
