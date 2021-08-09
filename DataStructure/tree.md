@@ -40,6 +40,8 @@
 
 (1).[Preorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-preorder-traversal)
 
+(2).[Postorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-postorder-traversal)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -576,6 +578,60 @@ class Solution {
             stack.push(node.right);
             stack.push(node.left);
         }
+        return result;
+    }
+}
+```
+
+Recursive method:
+
+```java
+class Solution {
+    List<Integer> result = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if (root == null) return result;
+        result.add(root.val);
+        preorderTraversal(root.left);
+        preorderTraversal(root.right);
+        return result;
+    }
+}
+```
+
+### (2). Postorder traversal
+
+Problem 145. Binary tree postorder traversal
+
+```java
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            if (node == null) continue;
+            result.add(node.val);
+            stack.push(node.left);
+            stack.push(node.right);
+        }
+        Collections.reverse(result);
+        return result;
+    }
+}
+```
+
+Recursive method:
+
+```java
+class Solution {
+    List<Integer> result = new ArrayList<>();
+    public List<Integer> postorderTraversal(TreeNode root) {
+        if (root == null) return result;
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
+        result.add(root.val);
         return result;
     }
 }
