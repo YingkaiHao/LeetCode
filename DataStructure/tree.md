@@ -637,3 +637,4 @@ class Solution {
 }
 ```
 
+### (3). Inorder traversal
