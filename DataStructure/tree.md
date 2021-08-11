@@ -42,6 +42,8 @@
 
 (2).[Postorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-postorder-traversal)
 
+(3).[Inorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-inorder-traversal)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -638,3 +640,27 @@ class Solution {
 ```
 
 ### (3). Inorder traversal
+
+Problem 94. Binary tree inorder traversal
+
+```java
+class Solution {
+  public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> result = new ArrayList<>();
+    if (root == null) return result;
+    Stack<TreeNode> stack = new Stack<>();
+    TreeNode current = root;
+    while (current != null || !stack.isEmpty()) {
+      while (current != null) {
+        stack.push(current);
+        current = current.left;
+      }
+      TreeNode node = stack.pop();
+      result.add(node.val);
+      current = node.right;
+    }
+    return result;
+  }
+}
+```
+
