@@ -42,7 +42,7 @@
 
 (2).[Postorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-postorder-traversal)
 
-(3).[Inorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-inorder-traversal)
+(3).[Inorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#3-inorder-traversal)
 
 ## 1. Recursion
 
