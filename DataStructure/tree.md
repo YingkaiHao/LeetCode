@@ -44,6 +44,10 @@
 
 (3).[Inorder traversal](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#3-inorder-traversal)
 
+4.[BTS](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#4-BTS)
+
+(1).[Trim a binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-trim-a-binary-search-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -660,6 +664,65 @@ class Solution {
       current = node.right;
     }
     return result;
+  }
+}
+```
+
+Recursive method:
+
+```java
+class Solution {
+  public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> result = new ArrayList<>();
+    newTraversal(root, result);
+    return result;
+  }
+  
+  public void newTraveral(TreeNode root, List<Integer> result) {
+    if (root != null) {
+      if (root.left != null) {
+        newTraversal(root.left, result);
+      }
+      result.add(root.val);
+      if (root.right != null) {
+        newTraversal(root.right, result);
+      }
+    }
+  }
+}
+```
+
+## 4. BTS
+
+### (1). Trim a binary search tree
+
+Given the root of a binary search tree and the lowest and highest boundaries as low and high, trim the tree so that all its elements lies in [low, high]. Trimming the tree shoule not change the relative structure of the elements that will remain in the tree(i.e., any node's descendant should remain a desecendant). It can be proven that there is a unique answer.(problem 669)
+
+Return the root of the trimmed binary search tree. Note that the root may change depending on the given bounds.
+
+Example 1:
+
+```
+Input: root = [1,0,2], low = 1, high = 2
+Output: [1,null,2]
+```
+
+Example 2:
+
+```
+Input: root = [3,0,4,null,2,null,null,1], low = 1, high = 3
+Output: [3,2,null,1]
+```
+
+```java
+class Solution {
+  public TreeNode trimBST(TreeNode root, int low, int high) {
+    if (root == null) return null;
+    if (root.val > high) return trimBST(root.left, low, high);
+    if (root.val < low) return trimBST(root.right, low, high);
+    root.left = trimBST(root.left, low, high);
+    root.right = trimBST(root.right, low, high);
+    return root;
   }
 }
 ```
