@@ -48,7 +48,7 @@
 
 (1).[Trim a binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-trim-a-binary-search-tree)
 
-(2).[Nth smallest element in a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-nth-smallest-elelment-in-a-BST)
+(2).[Nth smallest element in a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-nth-smallest-element-in-a-bst)
 
 ## 1. Recursion
 
