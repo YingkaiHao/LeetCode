@@ -48,6 +48,8 @@
 
 (1).[Trim a binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#1-trim-a-binary-search-tree)
 
+(2).[Nth smallest element in a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-nth-smallest-elelment-in-a-BST)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -723,6 +725,83 @@ class Solution {
     root.left = trimBST(root.left, low, high);
     root.right = trimBST(root.right, low, high);
     return root;
+  }
+}
+```
+
+### (2). Nth smallest element in a BST
+
+Given the root of a binary search tree, and an integer k, return the kth(1-indexed) smallest elelment in the tree.(problem 230)
+
+Example:
+
+```
+Input: root = [5,3,6,2,4,null,null,1], k = 3
+Output: 3
+```
+
+Iterative method:
+
+```java
+class Solution {
+  private int count = 0;
+  private int val;
+  
+  public int kthSmallest(TreeNode root, int k) {
+    order(root, k);
+    return val;
+  }
+  
+  private void order(TreeNode root, int k) {
+    if (root == null) return;
+    order(root.left, k);
+    count++;
+    if (count == k) {
+      val = root.val;
+      return;
+    }
+    order(root.right, k);
+  }
+}
+```
+
+Recursive method:
+
+```java
+class Solution {
+  public int kthSmallest(TreeNode root, int k) {
+    int leftCount = count(root.left);
+    if (leftCount == k - 1) {
+      return root.val;
+    }
+    if (leftCount > k - 1) {
+      return kthSmallest(root.left, k);
+    }
+    return kthSmallest(root.right, k - leftCount - 1);
+  }
+  
+  private int count(TreeNode root) {
+    if (root == null) return 0;
+    return 1 + count(root.left) + count(root.right);
+  }
+}
+```
+
+Another recursive method:
+
+```java
+class Solution {
+  public int kthSmallest(TreeNode root, int k) {
+    ArrayList<Integer> numbers = order(root, new ArrayList<Integer>());
+    return numbers.get(k - 1);
+  }
+  
+  private ArrayList<Integer> order(TreeNode root, ArrayList<Integer> array) {
+    if (root == null) return array;
+    order(root.left, array);
+    array.add(root.val);
+    order(root.right, array);
+    return array;
   }
 }
 ```
