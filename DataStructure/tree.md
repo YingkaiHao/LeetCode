@@ -50,6 +50,8 @@
 
 (2).[Nth smallest element in a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#2-nth-smallest-element-in-a-bst)
 
+(3).[Convert bst to greater tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#3-convert-bst-to-greater-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -802,6 +804,33 @@ class Solution {
     array.add(root.val);
     order(root.right, array);
     return array;
+  }
+}
+```
+
+### (3). Convert BST to greater tree
+
+Given the root of a binary search tree, convert it to a greater tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST. (Problem 538)
+
+As a reminder, a binary search tree is a tree that satisfies these constraints:
+
+1. The left subtree of a node contains only nodes with keys less than the node's key.
+2. The right subtree of a node contains only nodes with keys greater than the node's key.
+3. Both the left and right subtrees must also be binary search trees.
+
+```java
+class Solution {
+  priavte int sum = 0;
+  public TreeNode convertBST(TreeNode root) {
+    calculate(root);
+    return root;
+  }
+  private void calculate(TreeNode root) {
+    if (root == null) return;
+    calculate(root.right);
+    sum += root.val;
+    root.val = sum;
+    calculate(root.left);
   }
 }
 ```
