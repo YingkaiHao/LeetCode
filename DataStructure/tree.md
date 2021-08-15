@@ -835,3 +835,4 @@ class Solution {
 }
 ```
 
+### (4). Lowest common ancestor of a binary search tree
