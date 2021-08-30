@@ -54,7 +54,7 @@
 
 (4).[Lowest common ancestor of a binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#4-lowest-common-ancestor-of-a-binary-search-tree)
 
-(5).[Lowest common ancestor of a binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#5-lowest-common-ancester-of-a-binary-tree)
+(5).[Lowest common ancestor of a binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#5-lowest-common-ancestor-of-a-binary-tree)
 
 ## 1. Recursion
 
