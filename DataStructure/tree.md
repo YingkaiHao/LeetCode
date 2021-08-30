@@ -54,6 +54,8 @@
 
 (4).[Lowest common ancestor of a binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#4-lowest-common-ancestor-of-a-binary-search-tree)
 
+(5).[Lowest common ancestor of a binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#5-lowest-common-ancester-of-a-binary-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -865,6 +867,34 @@ class Solution {
     if (root.val > p.val && root.val > q.val) return lowestCommonAncester(root.left, p, q);
     if (root.val < p.val && root.val < q.val) return lowestCommonAncester(root.right, p, q);
     return root;
+  }
+}
+```
+
+### (5). Lowest Common ancestor of a binary tree
+
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
+Example:
+
+```
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+Output: 5
+Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
+```
+
+```java
+class Solution {
+  public TreeNode lowestCommonAncester(TreeNode root, TreeNode p, TreeNdoe q) {
+    if (root == null) return root;
+    if (root == p || root == q) return root;
+    TreeNode left = lowestCommonAncester(root.left, p, q);
+    TreeNode right = lowestCommonAncester(root.right, p, q);
+    if (left != null && right != null) {
+      return root;
+    }
+    if (left != null) return left;
+    return right;
   }
 }
 ```
