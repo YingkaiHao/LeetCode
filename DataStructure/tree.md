@@ -56,6 +56,8 @@
 
 (5).[Lowest common ancestor of a binary tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#5-lowest-common-ancestor-of-a-binary-tree)
 
+(6).[Convert sorted array to binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#6-convert-sorted-array-to-binary-search-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -873,7 +875,7 @@ class Solution {
 
 ### (5). Lowest Common ancestor of a binary tree
 
-Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.(problem 236)
 
 Example:
 
@@ -895,6 +897,35 @@ class Solution {
     }
     if (left != null) return left;
     return right;
+  }
+}
+```
+
+### (6). Convert sorted array to binary search tree
+
+Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree. (problem 108)
+
+A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
+
+```
+Input: nums = [-10,-3,0,5,9]
+Output: [0,-3,9,-10,null,5]
+Explanation: [0,-10,5,null,-3,null,9] is also accepted:
+```
+
+```java
+class Solution {
+  public TreeNode sortedArrayToBST(int[] nums) {
+    return isBalanced(nums, 0, nums.length - 1);
+  }
+  private TreeNode isBalanced(int[] nums, int index1, int index2) {
+    if (index1 > index2) return null;
+    if (index1 == index2) return new TreeNode(nums[index1]);
+    int middle = (index1 + index2) / 2;
+    TreeNode root = new TreeNode(int[middle]);
+    root.left = isBalanced(nums, index1, middle - 1);
+    root.right = isBalanced(nums, middle - 1, index2);
+    return root;
   }
 }
 ```
