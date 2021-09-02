@@ -58,6 +58,8 @@
 
 (6).[Convert sorted array to binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#6-convert-sorted-array-to-binary-search-tree)
 
+(7).[Convert sored list to binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#7-convert-sorted-list-to-binary-search-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -925,6 +927,40 @@ class Solution {
     TreeNode root = new TreeNode(int[middle]);
     root.left = isBalanced(nums, index1, middle - 1);
     root.right = isBalanced(nums, middle - 1, index2);
+    return root;
+  }
+}
+```
+
+### (7). Convert sorted list to binary search tree
+
+Given the head of a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+
+For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+
+```
+Input: head = [-10,-3,0,5,9]
+Output: [0,-3,9,-10,null,5]
+Explanation: One possible answer is [0,-3,9,-10,null,5], which represents the shown height balanced BST.
+```
+
+```java
+class Solution {
+  public TreeNode sortedListToBST(ListNode head) {
+    if (head == null) return null;
+    return isBalanced(head, null);
+  }
+  private TreeNode isBalanced(ListNode start, ListNode end) {
+    if (start == end) return null;
+    ListNode index1 = start;
+    ListNode index2 = start;
+    while (index2 != end && index2.next != end) {
+      index1 = index1.next;
+      index2 = index2.next.next;
+    }
+    TreeNode root = new TreeNode(index1.val);
+    root.left = isBalanced(start, index1);
+    root.right = isBalanced(index1.next, end);
     return root;
   }
 }
