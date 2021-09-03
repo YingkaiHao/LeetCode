@@ -60,7 +60,7 @@
 
 (7).[Convert sored list to binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#7-convert-sorted-list-to-binary-search-tree)
 
-(8).[Two sum IV - input is a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#8-two-wum-iv---input-is-a-is-bst)
+(8).[Two sum IV - input is a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#8-two-sum-iv---input-is-a-bst)
 
 ## 1. Recursion
 
