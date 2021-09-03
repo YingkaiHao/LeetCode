@@ -60,6 +60,8 @@
 
 (7).[Convert sored list to binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#7-convert-sorted-list-to-binary-search-tree)
 
+(8).[Two sum IV - input is a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#8-two-wum-iv---input-is-a-is-bst)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -961,6 +963,37 @@ class Solution {
     TreeNode root = new TreeNode(index1.val);
     root.left = isBalanced(start, index1);
     root.right = isBalanced(index1.next, end);
+    return root;
+  }
+}
+```
+
+### (8). Two sum IV - input is a BST
+
+Given the root of a Binary Search Tree and a target number k, return true if there exit two elements in the BST such that  their sum is equal to the given target.
+
+```
+Input: root = [5,3,6,2,4,null,7], k = 9
+Output: true
+```
+
+```java
+class Solution {
+  private HashMap<Integer, Integer> hashmap = new HashMap<>();
+  private boolean result = false;
+  public boolean findTarget(TreeNode root, int k) {
+    isTarget(root, k);
+    return result;
+  }
+  private TreeNode isTarget(TreeNode root, int k) {
+    if (root == null) return null;
+    isTarget(root.left, k);
+    if (hashmap.containsKey(k - root.val)) {
+      result = true;
+    } else {
+      hashmap.put(root.val, 1);
+    }
+    isTarget(root.right, k);
     return root;
   }
 }
