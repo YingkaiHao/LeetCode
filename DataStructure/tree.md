@@ -62,6 +62,8 @@
 
 (8).[Two sum IV - input is a BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#8-two-sum-iv---input-is-a-bst)
 
+(9).[Minimum absolute difference in BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#9-minimum-absolute-difference-in-bst)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -936,7 +938,7 @@ class Solution {
 
 ### (7). Convert sorted list to binary search tree
 
-Given the head of a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+Given the head of a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.(problem 109)
 
 For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 
@@ -970,7 +972,7 @@ class Solution {
 
 ### (8). Two sum IV - input is a BST
 
-Given the root of a Binary Search Tree and a target number k, return true if there exit two elements in the BST such that  their sum is equal to the given target.
+Given the root of a Binary Search Tree and a target number k, return true if there exit two elements in the BST such that  their sum is equal to the given target.(problem 653)
 
 ```
 Input: root = [5,3,6,2,4,null,7], k = 9
@@ -996,6 +998,35 @@ class Solution {
     isTarget(root.right, k);
     return root;
   }
+}
+```
+
+### (9). Minimum absolute difference in BST
+
+Given the root of a BST, return the minimum absolute difference between the values of any two different nodes in the tree.(problem 530)
+
+```
+Input: root = [4,2,6,1,3]
+Output: 1
+```
+
+```java
+class Solution {
+    private int minValue = Integer.MAX_VALUE;
+    private TreeNode preNode = null;
+    public int getMinimumDifference(TreeNode root) {
+        findMinValue(root);
+        return minValue;
+    }
+    private void findMinValue(TreeNode root) {
+        if (root == null) return;
+        findMinValue(root.left);
+        if (preNode != null) {
+            minValue = Math.min(minValue, root.val - preNode.val);
+        }
+        preNode = root;
+        findMinValue(root.right);
+    }
 }
 ```
 
