@@ -64,6 +64,8 @@
 
 (9).[Minimum absolute difference in BST](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#9-minimum-absolute-difference-in-bst)
 
+(10).[Find mode in binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-find-mode-in-binary-search-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -1027,6 +1029,40 @@ class Solution {
         preNode = root;
         findMinValue(root.right);
     }
+}
+```
+
+### (10). Find mode in binary search tree
+
+Given the root of a binary tree with duplicates, return all the mode(s) (i.e., the most frequently occurred element) in it. If the tree has more than one mode, return them in any order. (Problem 501)
+
+```java
+class Solution {
+  HashMap<Integer, Integer> hashmap = new HashMap<>();
+  public int[] findMode(TreeNode root) {
+    inOrder(root);
+    int max = Collections.max(map.values());
+    List<Integer> list = new ArrayList();
+    for (int index : hashmap.ketSet()) {
+      if (hashmap.get(index) == max) {
+        list.add(max);
+      }
+    }
+    
+    int[] result = new int[list.size()];
+    for (int i = 0; i < list.size(); i++) {
+      result[i] = list.get(i);
+    }
+    
+    return result;
+  }
+  private void inOrder(TreeNode root) {
+    if (root != null) {
+      hashmap.put(root.val, hashmap.getOrDefault(root.val, 0) + 1);
+      inOrder(root.left);
+      inOrder(root.right);
+    }
+  }
 }
 ```
 
