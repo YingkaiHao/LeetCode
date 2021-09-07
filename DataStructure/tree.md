@@ -66,6 +66,8 @@
 
 (10).[Find mode in binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-find-mode-in-binary-search-tree)
 
+(11).[Implement trie(prefix tree)](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-find-mode-in-binary-search-tree)
+
 ## 1. Recursion
 
 ### (1). Maximum depth of binary tree
@@ -1062,6 +1064,83 @@ class Solution {
       inOrder(root.left);
       inOrder(root.right);
     }
+  }
+}
+```
+
+### (11). Implement trie(prefix tree)
+
+A trie(pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker. (Problem 208)
+
+Implement the trie class:
+
+1. Trie( ) initializes the trie object.
+2. void insert(String word) Insert the string word into the trie.
+3. Boolean search(String word) returns true if the string word is in the trie(i.e., was inserted before), and false otherwise.
+4. Boolean startWith(String prerix) returns true if there is a previously inserted string word that has the prefix, and false otherwise.
+
+Example:
+
+```
+Input
+["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
+[[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
+Output
+[null, null, true, false, true, null, true]
+
+Explanation
+Trie trie = new Trie();
+trie.insert("apple");
+trie.search("apple");   // return True
+trie.search("app");     // return False
+trie.startsWith("app"); // return True
+trie.insert("app");
+trie.search("app");     // return True
+```
+
+```java
+class Solution {
+  public class TrieNode {
+    TrieNode[] children = new TrieNode[26];
+    boolean isWord = false;
+    String word = "";
+  }
+  private TrieNode root;
+  public Trie() {
+    root = new TrieNode();
+  }
+  public void insert(String word) {
+    TrieNode node = root;
+    for (int i = 0; i < word.length(); i++) {
+      int index = word.charAt(i) - 'a';
+      if (node.children[index] == null) {
+        node.children[index] = new TrieNode();
+      }
+      node = node.children[index];
+    }
+    node.isWord = true;
+  }
+  public boolean search(String word) {
+    TrieNode node = root;
+    for (int i = 0; i < word.length(); i++) {
+      int index = word.charAt(i) - 'a';
+      if (node.children[index] == null) {
+        return false
+      }
+      node = node.children[index];
+    }
+    return node.isWord;
+  }
+  public boolean startsWith(String prefix) {
+    TrieNode node = root;
+    for (int i = 0; i < prefix.length(); i++) {
+      int index = prefix.charAt(i) - 'a';
+      if (node.children[index] == null) {
+        return false
+      }
+      node = node.children[index];
+    }
+    return true;
   }
 }
 ```
