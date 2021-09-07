@@ -66,7 +66,7 @@
 
 (10).[Find mode in binary search tree](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-find-mode-in-binary-search-tree)
 
-(11).[Implement trie(prefix tree)](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#10-find-mode-in-binary-search-tree)
+(11).[Implement trie(prefix tree)](https://github.com/YingkaiHao/LeetCode/blob/main/DataStructure/tree.md#11-implement-trieprefix-tree)
 
 ## 1. Recursion
 
